@@ -1,10 +1,10 @@
 {
-  "name": "apiads",
+  "name": "api4ads",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/www",
-    "dev": "cross-env DEBUG=apiads:* NODE_ENV=development nodemon ./bin/www"
+    "dev": "cross-env DEBUG=api4ads:* NODE_ENV=development nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
