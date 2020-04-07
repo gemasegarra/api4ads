@@ -1,6 +1,6 @@
-# Api4ads
+# Api4ads
 
-## Installing
+## Installing
 
 To run this project locally do the following:
 
