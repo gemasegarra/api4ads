@@ -8,7 +8,20 @@ const Ad = require('../../models/Ad');
 
 router.get('/', async (req, res, next) => {
   try {
-    const docs = await Ad.find()
+    const name = req.query.name;
+    const price = req.query.price;
+
+    const limit = parseInt(req.query.limit || 20);
+    const skip = parseInt(req.query.skip);
+  
+    const filter = {};
+    if (name) {
+      filter.name = name;
+    }
+    if (price) {
+      filter.price = price;
+    }
+    const docs = await Ad.list(filter, limit, skip)
     res.json(docs);
   } catch(err) {
     next(err)
