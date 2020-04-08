@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/www",
-    "dev": "cross-env DEBUG=api4ads:* NODE_ENV=development nodemon ./bin/www"
+    "dev": "cross-env DEBUG=api4ads:* NODE_ENV=development nodemon ./bin/www",
+    "install-db": "node lib/install-db.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
