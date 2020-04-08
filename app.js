@@ -15,8 +15,9 @@ require('./lib/mongooseConnection');
 
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'html');
+app.engine('html', require('ejs').__express);
+
 
 app.use(logger('dev'));
 app.use(express.json());
