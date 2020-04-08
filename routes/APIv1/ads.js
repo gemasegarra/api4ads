@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
     const name = req.query.name;
     const price = req.query.price;
 
-    const limit = parseInt(req.query.limit || 20);
+    const limit = parseInt(req.query.limit || 2000);
     const skip = parseInt(req.query.skip);
   
     const filter = {};
