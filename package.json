@@ -5,7 +5,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/www",
     "dev": "cross-env DEBUG=api4ads:* NODE_ENV=development nodemon ./bin/www",
-    "install-db": "node lib/install-db.js"
+    "install-db": "node database/install-db.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -15,6 +15,7 @@
     "http-errors": "~1.6.3",
     "mongoose": "^5.9.7",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "uikit": "^3.3.7"
   }
 }

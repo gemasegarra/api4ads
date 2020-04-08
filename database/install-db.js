@@ -15,5 +15,5 @@ db.once('open', async () => {
 
 async function initAds() {
   await Ad.deleteMany();
-  await Ad.insertMany(JSON.parse(fs.readFileSync('./firstAds.json', 'utf8')).ads)
+  await Ad.insertMany(JSON.parse(fs.readFileSync('./database/firstAds.json', 'utf8')).ads)
 };

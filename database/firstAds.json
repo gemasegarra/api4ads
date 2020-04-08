@@ -2,7 +2,7 @@
   "ads": [
     {
       "name": "The Outer Worlds",
-      "buy": true,
+      "onSale": true,
       "price": 20,
       "photo": "/images/ads/outerworlds.jpg",
       "tags": [
@@ -11,7 +11,7 @@
     },
     {
       "name": "The Last of Us Remastered",
-      "buy": true,
+      "onSale": true,
       "price": 15,
       "photo": "/images/ads/lastofus.jpg",
       "tags": [
@@ -20,7 +20,7 @@
     },
     {
       "name": "The Beach - Alex Garland",
-      "buy": false,
+      "onSale": false,
       "price": 10,
       "photo": "/images/ads/beach.jpg",
       "tags": [
