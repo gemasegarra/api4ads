@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const adSchema = mongoose.Schema({
-  title: String,
+  name: String,
   type: Boolean,
   price: Number,
   photo: String,
