@@ -10,10 +10,11 @@ router.get('/', async (req, res, next) => {
   try {
     const name = req.query.name;
     const price = req.query.price;
+    const type = req.query.type; 
 
     const limit = parseInt(req.query.limit || 2000);
     const skip = parseInt(req.query.skip);
-  
+    const sort = req.query.sort;
     const filter = {};
     if (name) {
       filter.name = name;
@@ -21,7 +22,10 @@ router.get('/', async (req, res, next) => {
     if (price) {
       filter.price = price;
     }
-    const docs = await Ad.list(filter, limit, skip)
+    if (type) {
+      filter.type = type;
+    }
+    const docs = await Ad.list(filter, limit, skip, sort)
     res.json(docs);
   } catch(err) {
     next(err)
