@@ -1,11 +1,25 @@
 const mongoose = require('mongoose');
 
 const adSchema = mongoose.Schema({
-  name: String,
-  type: Boolean,
-  price: Number,
+  name: {  
+    type: String, 
+    required: [true, 'Ads must have a name'],
+    unique: true,
+    maxlength: [50, 'Ad names must have less than 50 characters']},
+
+  onSale: {
+    type: Boolean,
+    required: [true, 'You must specify whether you are looking to sell or looking to buy']
+  },
+  price: {
+    type: Number,
+    required: [true, 'Ads must have a price']
+  },
   photo: String,
-  tags: [String],
+  tags: {
+    type: [String],
+    enum: ['lifestyle', 'mobile', 'motor', 'work']
+  }
 });
 
 adSchema.statics.list = function(filter, limit, skip, sort, fields) {
