@@ -3,10 +3,13 @@ const router = express.Router();
 
 const Ad = require('../../models/Ad');
 
-router.get('/', (req, res, next) => {
-  Ad.find().exec((err, docs) => {
-    res.json(docs)
-  })
+router.get('/', async (req, res, next) => {
+  try {
+    const docs = await Ad.find()
+    res.json(docs);
+  } catch(err) {
+    next(err)
+  }
 });
 
 module.exports = router;
