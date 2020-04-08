@@ -10,7 +10,7 @@ router.get('/', async (req, res, next) => {
   try {
     const name = req.query.name;
     const price = req.query.price;
-    const type = req.query.type; 
+    const onSale = req.query.onSale; 
 
     const limit = parseInt(req.query.limit || 2000);
     const skip = parseInt(req.query.skip);
@@ -22,11 +22,12 @@ router.get('/', async (req, res, next) => {
     if (price) {
       filter.price = price;
     }
-    if (type) {
-      filter.type = type;
+    if (onSale) {
+      filter.onSale = onSale;
     }
     const docs = await Ad.list(filter, limit, skip, sort)
     res.json(docs);
+    res.render('index')
   } catch(err) {
     next(err)
   }
@@ -52,6 +53,11 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+// GET /apiv1/tags
+// Shows a list of the tags
+
+
+
 // POST /apiv1/ads
 // Creates new ad
 
@@ -68,7 +74,7 @@ router.post('/', async (req, res, next) => {
 
 // DELETE /apiv1/ads/:id
 // Removes an ad
-/* router.delete('/:id', async (req, res, next) => {
+ router.delete('/:id', async (req, res, next) => {
   try {
     const _id = req.params.id;
     await Ad.deleteOne({ _id });
@@ -76,7 +82,7 @@ router.post('/', async (req, res, next) => {
   } catch(err) {
     next(err);
   }
-}) */
+}) 
 
 
 module.exports = router;
