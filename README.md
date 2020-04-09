@@ -2,7 +2,7 @@
 
 Api4ads is an API for advertising items. Users can create new ads, search, filter and sort the existing ones. 
 
-## Getting started
+## Getting started 
 
 To run this project locally do the following:
 
@@ -12,11 +12,11 @@ To run this project locally do the following:
 - Run ```npm start```  to start server on http://localhost:3000/ in **development mode**
 - Or run ```npm run dev``` to start server in **production mode**
 
-## API documentation 
+## API documentation 📖
 
 
-| Endpoints        |            |   |
-| ------------- |:-------------:| -----:|
+| Endpoints        |            |   
+| ------------- |:-------------:| 
 | /apiv1/ads      | returns json data with all ads 
 | /apiv1/ads/{ad.id}      | returns json data of an ad by id    
 | /apiv1/tags | returns json data with the allowed tags     
@@ -85,4 +85,19 @@ Several filters can be used at once:
 
 ```http://localhost:3000/apiv1/ads?sort=price&onSale=true```
 
-![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/3.png?token=AJRTL2PXMYFOA33XMIRCYJ26R5YJC)
+![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/3.png?token=AJRTL2OV6JMRXYK3QSZOY726R5X34)
+
+
+## Built with 
+
+- NodeJS & Express
+- MongoDB & Mongoose
+
+## Author 👩🏻‍💻
+
+<table>
+<tr>
+<td align="center"><a href="https://github.com/gemasegarra"><img src="https://avatars2.githubusercontent.com/u/40056297?v=4" width="100px;" alt="Gema avatar"/><br/><sub><b>Gema</b></sub></a><br/><a href="https://github.com/gemasegarra"></a>
+</table>
+
+---
