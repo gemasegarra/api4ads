@@ -11,8 +11,8 @@ router.get('/', async (req, res, next) => {
     const name = req.query.name;
     const price = req.query.price;
     const onSale = req.query.onSale; 
-
-    const limit = parseInt(req.query.limit || 2000);
+    const tags = req.query.tags;
+    const limit = parseInt(req.query.limit || 100);
     const skip = parseInt(req.query.skip);
     const sort = req.query.sort;
     const filter = {};
@@ -24,6 +24,9 @@ router.get('/', async (req, res, next) => {
     }
     if (onSale) {
       filter.onSale = onSale;
+    }
+    if (tags) {
+      filter.tags = tags;
     }
     const docs = await Ad.list(filter, limit, skip, sort)
     res.json(docs);
