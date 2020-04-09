@@ -8,18 +8,18 @@ To run this project locally do the following:
 
 - Clone the project
 - Run ```npm install``` to install all the dependencies
-- Run ```npm run install-db``` to initialize database 
+- Run ```npm run install-db``` to seed database 
 - Run ```npm start```  to start server on http://localhost:3000/ in **development mode**
 - Or run ```npm run dev``` to start server in **production mode**
 
-## API documentation 📖
+## API documentation  📖
 
 
-| Endpoints        |            |   
+| Endpoint        |    Response        |   
 | ------------- |:-------------:| 
-| /apiv1/ads      | returns json data with all ads 
-| /apiv1/ads/{ad.id}      | returns json data of an ad by id    
-| /apiv1/tags | returns json data with the allowed tags     
+| /apiv1/ads      | json data with all ads 
+| /apiv1/ads/{ad.id}      |  json data of an ad by id    
+| /apiv1/tags |  json data with the allowed tags     
 
 
 The API allows to create a new ad using the ```/apiv1/ads``` endpoint with a POST method. 
@@ -74,18 +74,18 @@ The API also allows to sort ads, limit the number of shown results (the limit by
 Examples:
 
  ```http://localhost:3000/apiv1/ads?name=The%20Outer%20Worlds```   ⚠️ Name filtering is case sensitive! 
-![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/1.png?token=AJRTL2OV6JMRXYK3QSZOY726R5X34)
+![result example](https://github.com/gemasegarra/api4ads/blob/master/public/images/1.png)
 
 Several filters can be used at once:
 
 ```http://localhost:3000/apiv1/ads?tag=lifestyle&onSale=false``` 
 
-![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/2.png?token=AJRTL2J7ST2BG7WQCTJP3RK6R5YHU)
+![result example](https://github.com/gemasegarra/api4ads/blob/master/public/images/2.png)
 
 
 ```http://localhost:3000/apiv1/ads?sort=price&onSale=true```
 
-![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/3.png?token=AJRTL2OV6JMRXYK3QSZOY726R5X34)
+![result example](https://github.com/gemasegarra/api4ads/blob/master/public/images/3.png)
 
 
 ## Built with 
