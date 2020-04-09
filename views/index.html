@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
 
- 
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui@3.0.0-rc.0/dist/css/coreui.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 
+<body>
+  <h1><%= title %></h1>
+  <h2>Welcome to <%= title %>!</h2>
+  <p>API4ads </p>
 
-  </body>
+  <div class=row>
+    <% docs.forEach(item => { %>
+  <div class="card" style="width: 13rem;">
+    <img src="<%= item.photo %>" class="card-img-top" alt="picture of ad">
+
+    <div class="card-body">
+      <h5 class="card-title"><%= item.name %></h5>
+      <% if(item && item.onSale){ %>
+        <p class="card-text" id="type">Looking to sell</p> 
+        <% }  else { %>
+        <p class="card-text" id="type">Looking to buy</p> 
+        <% } %></p>
+      <p class="card-text">Price: <%= item.price %>€</p>
+      <a href="/<%= item._id %>" class="btn btn-light">See details</a>
+    </div>
+  </div>
+  <% }) %>
+ </div>
+</body>
+
 </html>
