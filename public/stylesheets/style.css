@@ -6,3 +6,23 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+h2 {
+  margin: 30px 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+
+.card {
+  margin-bottom: 20px;
+} 
+
+.card-title, #type {
+  font-weight: bold;
+}
