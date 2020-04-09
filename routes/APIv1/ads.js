@@ -27,12 +27,10 @@ router.get('/', async (req, res, next) => {
     }
     const docs = await Ad.list(filter, limit, skip, sort)
     res.json(docs);
-    res.render('index')
   } catch(err) {
     next(err)
   }
 });
-
 
 // GET /apiv1/ads/:id
 // Returns ad with specific id
