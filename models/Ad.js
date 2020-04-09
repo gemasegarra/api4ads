@@ -19,7 +19,11 @@ const adSchema = mongoose.Schema({
   tags: {
     type: [String],
     enum: ['lifestyle', 'mobile', 'motor', 'work']
-  }
+  },
+  description: {
+    type: String,
+    maxlength: [100, 'Ad descriptions must have less than 100 characters']
+  } 
 });
 
 adSchema.statics.list = function(filter, limit, skip, sort, fields) {

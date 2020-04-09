@@ -7,7 +7,8 @@
       "photo": "/images/ads/outerworlds.jpg",
       "tags": [
         "lifestyle"
-      ]
+      ],
+      "description": "PS4 version. Cool game!"
     },
     {
       "name": "The Last of Us Remastered",
@@ -16,7 +17,8 @@
       "photo": "/images/ads/lastofus.jpg",
       "tags": [
         "lifestyle"
-      ]
+      ],
+      "description": "Game case is a bit broken. CD works fine."
     },
     {
       "name": "The Beach - Alex Garland",
@@ -25,7 +27,8 @@
       "photo": "/images/ads/beach.jpg",
       "tags": [
         "lifestyle"
-      ]
+      ],
+      "description": "Looking to buy Alex Garland's The Beach in English"
     }
   ]
 }
