@@ -74,10 +74,15 @@ The API also allows to sort ads, limit the number of shown results (the limit by
 Examples:
 
  ```http://localhost:3000/apiv1/ads?name=The%20Outer%20Worlds```   ⚠️ Name filtering is case sensitive! 
-
+![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/1.png?token=AJRTL2OV6JMRXYK3QSZOY726R5X34)
 
 Several filters can be used at once:
 
-```http://localhost:3000/apiv1/ads?tag=work&onSale=false``` 
+```http://localhost:3000/apiv1/ads?tag=lifestyle&onSale=false``` 
+
+![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/2.png?token=AJRTL2J7ST2BG7WQCTJP3RK6R5YHU)
+
 
 ```http://localhost:3000/apiv1/ads?sort=price&onSale=true```
+
+![result example](https://raw.githubusercontent.com/gemasegarra/api4ads/master/public/images/3.png?token=AJRTL2PXMYFOA33XMIRCYJ26R5YJC)
