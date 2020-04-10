@@ -17,11 +17,12 @@ router.get('/', async (req, res, next) => {
     const sort = req.query.sort;
     const filter = {};
     if (name) {
-      filter.name = name;
+      filter.name =  { $regex: name, $options: 'i' };
     }
     if (price) {
       filter.price = price;
     }
+  
     if (onSale) {
       filter.onSale = onSale;
     }
