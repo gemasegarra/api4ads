@@ -32,3 +32,12 @@ h2 {
   border: 1px solid #db7093;
 
 }
+
+.example {
+  font-weight: bold;
+  display: inline;
+}
+
+.info {
+  margin-bottom: 10px;
+}

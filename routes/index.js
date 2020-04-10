@@ -12,13 +12,25 @@ router.get('/', async function (req, res, next) {
     const skip = parseInt(req.query.skip);
     const sort = req.query.sort;
     const filter = {};
+    
     if (name) {
       filter.name =  { $regex: name, $options: 'i' };
     }
+
     if (price) {
-      filter.price = price;
+      if (price.indexOf('-') >= 1) {
+        let priceGT = price.split('-')
+        filter.price = { $gte: priceGT[0] }
+      }
+      else if (price.indexOf('-') === 0) {
+        let priceGT = price.split('-')
+        filter.price = { $lte: priceGT[1] }
+      }
+      else {
+        filter.price = price;
+      }
     }
-  
+
     if (onSale) {
       filter.onSale = onSale;
     }
