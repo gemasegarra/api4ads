@@ -1,6 +1,6 @@
-# Api4ads
+# API4ads
 
-Api4ads is an API for advertising items. Users can create new ads, search, filter and sort the existing ones. 
+API4ads is an API for advertising items. Users can create new ads, search, filter and sort the existing ones. 
 
 ## Getting started 
 
@@ -96,7 +96,7 @@ You can see all the created ads on http://localhost:3000 rendered with EJS and C
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/5.png)
 
-Creatimg a new ad through the website is not implemented yet.
+Creating a new ad through the website is not implemented yet.
 
 
 
