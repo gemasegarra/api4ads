@@ -4,7 +4,28 @@ const Ad = require('../models/Ad');
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-  const docs = await Ad.list();
+  const name = req.query.name;
+    const price = req.query.price;
+    const onSale = req.query.onSale; 
+    const tags = req.query.tags;
+    const limit = parseInt(req.query.limit || 100);
+    const skip = parseInt(req.query.skip);
+    const sort = req.query.sort;
+    const filter = {};
+    if (name) {
+      filter.name =  { $regex: name, $options: 'i' };
+    }
+    if (price) {
+      filter.price = price;
+    }
+  
+    if (onSale) {
+      filter.onSale = onSale;
+    }
+    if (tags) {
+      filter.tags = tags;
+    }
+  const docs = await Ad.list(filter, limit, skip, sort);
 
   res.render('index', {
     title: 'API4ads', docs: docs
