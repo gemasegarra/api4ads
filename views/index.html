@@ -5,12 +5,28 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui@3.0.0-rc.0/dist/css/coreui.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+
 </head>
 
 <body>
   <h1><%= title %></h1>
   <h2>Welcome to <%= title %>!</h2>
-  <div class=row>
+  <p>
+    <button class="btn btn-primary" id="pink"type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      How to filter ads?
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <p>To filter ads by name: http://localhost:3000/?name=enter one or more characters. ie. http://localhost:3000/?name=beach
+      </p>
+      <p>To filter ads by price: http://localhost:3000/?price=enter a number. ie. http://localhost:3000/?price=20</p>
+      <p>To filter ads by tags: http://localhost:3000/?tags=enter a tag (lifestyle, mobile, motor, work) ie. http://localhost:3000/?tags=lifestyle</p>
+      <p>To filter ads by type: http://localhost:3000/?onSale=true if for items on sale and http://localhost:3000/?onSale=false for requested items</p>
+    </div>
+  </div>
+
+  <div class="row">
     <% docs.forEach(item => { %>
   <div class="card" style="width: 13rem;">
     <img src="<%= item.photo %>" class="card-img-top" alt="picture of ad">
@@ -28,6 +44,8 @@
   </div>
   <% }) %>
  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js" integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9&#43;4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@coreui/coreui@3.0.0-rc.0/dist/js/coreui.min.js"></script>
 </body>
 
 </html>

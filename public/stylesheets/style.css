@@ -26,3 +26,9 @@ h2 {
 .card-title, #type {
   font-weight: bold;
 }
+
+#pink {
+  background-color: #db7093;
+  border: 1px solid #db7093;
+
+}
