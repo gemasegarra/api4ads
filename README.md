@@ -59,6 +59,9 @@ The filtering of ads is implemented by using query parameters:
 
 - Filter ads by name: **?name=*name***
 - Filter ads by price: **?price=*number***
+- Filter ads by min price: **?price=*-number***
+- Filter ads by max price: **?price=*number-***
+- Filter ads by min and max price: **?price=*number-number*** i.e ?price=10-20 will return all ads with a price between 10 and 20
 - Filter ads by type: **?onSale=*true*** or **?onSale=*false***
 - Filter ads by tags: **?tags=*tag***
 
@@ -92,7 +95,7 @@ Several filters can be used at once:
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/4.png)
 
-You can see all the created ads on http://localhost:3000 rendered with EJS and CoreUI.
+You can see all the created ads and filter them on http://localhost:3000, rendered with EJS and CoreUI.  
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/5.png)
 
