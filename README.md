@@ -19,7 +19,7 @@ To run this project locally do the following:
 | ------------- |:-------------:| 
 | /apiv1/ads      | json data with all ads 
 | /apiv1/ads/{ad.id}      |  json data of an ad by id    
-| /apiv1/tags |  json data with the allowed tags     
+| /apiv1/tags |  json data with the allowed tags and the tags in use     
 
 
 The API allows to create a new ad using the ```/apiv1/ads``` endpoint with a POST method. 
@@ -76,7 +76,7 @@ The API also allows to sort ads, limit the number of shown results (the limit by
 
 Examples:
 
- ```http://localhost:3000/apiv1/ads?name=The%20Outer%20Worlds```   ⚠️ Name filtering is case sensitive! 
+ ```http://localhost:3000/apiv1/ads?name=The%20Outer%20Worlds```  
 ![result example](https://github.com/gemasegarra/api4ads/blob/master/public/images/1.png)
 
 Several filters can be used at once:
