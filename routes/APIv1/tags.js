@@ -1,18 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
-
-
-let tagsSchema = mongoose.Schema({
-
-  tags: { type: String, enum: ['lifestyle', 'mobile', 'motor', 'work']},
-
-});
-let Tags = mongoose.model('Document', tagsSchema);
+const Ad = require('../../models/Ad');
 
 router.get('/', async (req, res, next) => {
-  let result = Tags.schema.path('tags').enumValues
-  res.json({tags: result})
+  let result = Ad.schema.path('tags').caster.validators[0].enumValues;
+  const docs = await Ad.list()
+  let usedTags = [];
+  docs.forEach(item => {
+    item.tags.forEach (tag=> {
+      if (usedTags.indexOf(tag) === -1){
+    usedTags.push(item.tags.toString())
+  }});  
+})
+console.log(usedTags)
+res.json({'Allowed tags': result, 'Tags in use:': usedTags})
 })
 
 module.exports = router;
