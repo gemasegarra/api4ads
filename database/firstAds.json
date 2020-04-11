@@ -26,7 +26,8 @@
       "price": 10,
       "photo": "/images/ads/beach.jpg",
       "tags": [
-        "lifestyle"
+        "lifestyle",
+        "work"
       ],
       "description": "Looking to buy Alex Garland's The Beach in English"
     }

@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const Ad = require('../../models/Ad');
@@ -8,13 +9,13 @@ const Ad = require('../../models/Ad');
 
 router.get('/', async (req, res, next) => {
   try {
-    const name = req.query.name;
-    const price = req.query.price;
-    const onSale = req.query.onSale;
-    const tags = req.query.tags;
+    const { name } = req.query;
+    const { price } = req.query;
+    const { onSale } = req.query;
+    const { tags } = req.query;
     const limit = parseInt(req.query.limit || 100);
     const skip = parseInt(req.query.skip);
-    const sort = req.query.sort;
+    const { sort } = req.query;
     const filter = {};
     if (name) {
       filter.name = { $regex: name, $options: 'i' };
@@ -22,14 +23,12 @@ router.get('/', async (req, res, next) => {
 
     if (price) {
       if (price.indexOf('-') >= 1) {
-        let priceGT = price.split('-')
-        filter.price = { $gte: priceGT[0] }
-      }
-      else if (price.indexOf('-') === 0) {
-        let priceGT = price.split('-')
-        filter.price = { $lte: priceGT[1] }
-      }
-      else {
+        const priceGT = price.split('-');
+        filter.price = { $gte: priceGT[0] };
+      } else if (price.indexOf('-') === 0) {
+        const priceGT = price.split('-');
+        filter.price = { $lte: priceGT[1] };
+      } else {
         filter.price = price;
       }
     }
@@ -39,10 +38,10 @@ router.get('/', async (req, res, next) => {
     if (tags) {
       filter.tags = tags;
     }
-    const docs = await Ad.list(filter, limit, skip, sort)
+    const docs = await Ad.list(filter, limit, skip, sort);
     res.json(docs);
   } catch (err) {
-    next(err)
+    next(err);
   }
 });
 
@@ -57,7 +56,7 @@ router.get('/:id', async (req, res, next) => {
       const err = new Error('Not found');
       err.status = 404;
       next(err);
-      return
+      return;
     }
     res.json({ result: ad });
   } catch (err) {
@@ -69,7 +68,6 @@ router.get('/:id', async (req, res, next) => {
 // Shows a list of the tags
 
 
-
 // POST /apiv1/ads
 // Creates new ad
 
@@ -78,11 +76,11 @@ router.post('/', async (req, res, next) => {
     const adData = req.body;
     const ad = new Ad(adData);
     const savedAd = await ad.save();
-    res.status(201).json({ result: savedAd })
+    res.status(201).json({ status: 'ad created', result: savedAd });
   } catch (err) {
-    next(err)
+    next(err);
   }
-})
+});
 
 // DELETE /apiv1/ads/:id
 // Removes an ad
@@ -94,7 +92,7 @@ router.delete('/:id', async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-})
+});
 
 
 module.exports = router;

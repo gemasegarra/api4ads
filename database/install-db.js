@@ -3,6 +3,11 @@ const fs = require('fs');
 const db = require('../lib/mongooseConnection');
 const Ad = require('../models/Ad');
 
+async function initAds() {
+  await Ad.deleteMany();
+  await Ad.insertMany(JSON.parse(fs.readFileSync('./database/firstAds.json', 'utf8')).ads);
+}
+
 db.once('open', async () => {
   try {
     await initAds();
@@ -12,8 +17,3 @@ db.once('open', async () => {
     process.exit(1);
   }
 });
-
-async function initAds() {
-  await Ad.deleteMany();
-  await Ad.insertMany(JSON.parse(fs.readFileSync('./database/firstAds.json', 'utf8')).ads)
-};
