@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // API routes
 
 app.use('/apiv1/ads', require('./routes/APIv1/ads'))
+app.use('/apiv1/tags', require('./routes/APIv1/tags'))
 
 // Website routes
 app.use('/', indexRouter);
