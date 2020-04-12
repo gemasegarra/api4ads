@@ -1,5 +1,9 @@
 # API4ads
 
+> REST API that allows to create ads, list and filter them! 
+
+![api results](https://github.com/gemasegarra/api4ads/blob/master/public/images/0.png)
+
 API4ads is an API for advertising items. Users can create new ads, search, filter and sort the existing ones. 
 
 ## Getting started 

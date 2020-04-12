@@ -27,8 +27,6 @@ const adSchema = mongoose.Schema({
   },
 });
 
-const Ad = mongoose.model('Ad', adSchema);
-
 adSchema.statics.list = function (filter, limit, skip, sort, fields) {
   const query = Ad.find(filter);
   query.limit(limit);
@@ -37,5 +35,7 @@ adSchema.statics.list = function (filter, limit, skip, sort, fields) {
   query.select(fields);
   return query.exec();
 };
+
+const Ad = mongoose.model('Ad', adSchema);
 
 module.exports = Ad;
