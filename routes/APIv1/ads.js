@@ -22,12 +22,16 @@ router.get('/', async (req, res, next) => {
     }
 
     if (price) {
-      if (price.indexOf('-') >= 1) {
-        const priceGT = price.split('-');
-        filter.price = { $gte: priceGT[0] };
-      } else if (price.indexOf('-') === 0) {
-        const priceGT = price.split('-');
-        filter.price = { $lte: priceGT[1] };
+      const range = price.split('-');
+      if (range.length === 2) {
+        const [fromPrice, toPrice] = range;
+        filter.price = {};
+        if (fromPrice) {
+          filter.price.$gte = fromPrice;
+        }
+        if (toPrice) {
+          filter.price.$lte = toPrice;
+        }
       } else {
         filter.price = price;
       }
@@ -63,10 +67,6 @@ router.get('/:id', async (req, res, next) => {
     next(err);
   }
 });
-
-// GET /apiv1/tags
-// Shows a list of the tags
-
 
 // POST /apiv1/ads
 // Creates new ad
