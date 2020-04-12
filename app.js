@@ -9,7 +9,7 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
-function APIRequest(req) {
+function APIRequest(req) {
   return req.originalUrl.startsWith('/apiv1/');
 }
 
