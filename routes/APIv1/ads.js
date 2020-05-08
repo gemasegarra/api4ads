@@ -3,11 +3,12 @@ const express = require('express');
 const router = express.Router();
 
 const Ad = require('../../models/Ad');
+const jwtAuth = require('../../lib/jwtAuth');
 
 // GET /apiv1/ads
 // Returns list of ads
 
-router.get('/', async (req, res, next) => {
+router.get('/', jwtAuth, async (req, res, next) => {
   try {
     const { name } = req.query;
     const { price } = req.query;

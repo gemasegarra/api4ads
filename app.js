@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/apiv1/ads', require('./routes/APIv1/ads'));
 app.use('/apiv1/tags', require('./routes/APIv1/tags'));
+app.use('/apiv1/authenticate', require('./routes/APIv1/authenticate.js'));
 
 // Website routes
 app.use('/', indexRouter);
