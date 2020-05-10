@@ -13,20 +13,39 @@ To run this project locally do the following:
 - Clone the project
 - Run ```npm install``` to install all the dependencies
 - Run ```npm run install-db``` to seed database 
+- Run ```ads-thumbnails-worker``` so thumbnails for uploaded photos can be created
 - Run ```npm start```  to start server on http://localhost:3000/ in **development mode**
 - Or run ```npm run dev``` to start server in **production mode**
 
+
 ## API documentation  📖
 
+**New feature:**
+Authentication via JTW has been implemented to the API. To access apiv1/ads you will need a JWT. 
+An user has been created for testing. 
 
-| Endpoint        |    Response        |   
-| ------------- |:-------------:| 
-| /apiv1/ads      | json data with all ads 
-| /apiv1/ads/{ad.id}      |  json data of an ad by id    
-| /apiv1/tags |  json data with the allowed tags and the tags in use     
+````
+email: user@example.com
+password: 1234
+````
+
+/apiv1/authenticate with POST method will create a token if credentials are valid or return a ```401 Unauthorized``` error if user or password are not valid. This token will be used as a query string to access the API data via /apiv1/ads?token=token.
+
+
+
+| Endpoint        |    Response        |   Method
+| ------------- |:-------------:| |------:|
+| /apiv1/authenticate | token to access apiv1/ads if email and password are correct | POST |
+| /apiv1/ads | without a valid token, ```401 Unauthorized``` error  | GET |
+| /apiv1/ads?token=validtoken      | json data with all ads | GET |
+| /apiv1/ads/{ad.id}      |  json data of an ad by id    | GET |
+| /apiv1/tags |  json data with the allowed tags and the tags in use | GET |
 
 
 The API allows to create a new ad using the ```/apiv1/ads``` endpoint with a POST method. 
+
+**New feature!**
+Pictures can now be uploaded as a file from your machine and will be saved on public/uploads folder. If ```ads-thumbnails-worker``` is running a thumbnail of the picture with size 100x100 will be created and saved too.
 
 All ads will have the following schema:
 ````
@@ -55,7 +74,7 @@ All ads will have the following schema:
     maxlength: [100, 'Ad descriptions must have less than 100 characters']
   } 
 
-```` 
+````  
 
 #### Filtering ads:
 
@@ -99,7 +118,10 @@ Several filters can be used at once:
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/4.png)
 
-You can see all the created ads and filter them on http://localhost:3000, rendered with EJS and CoreUI.  
+You can see all the created ads and filter them on http://localhost:3000, rendered with EJS and CoreUI. 
+
+**New feature!** 
+Now it's possible to change the website language to Spanish.
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/5.png)
 
