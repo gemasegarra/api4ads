@@ -41,3 +41,14 @@ h2 {
 .info {
   margin-bottom: 10px;
 }
+
+#lang-but {
+  border: 1px solid #db7093;
+  color: #3c4b64;
+  margin-bottom: 10px;
+}
+
+#lang_but:hover {
+  background-color: #db7093;
+  color: white;
+}

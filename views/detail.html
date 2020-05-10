@@ -16,14 +16,14 @@
     <div class="card-body">
       <h5 class="card-title"><%= name %></h5>
       <% if(onSale){ %>
-        <p class="card-text" id="type">Looking to sell</p> 
+        <p class="card-text" id="type"><%= __('Looking to sell') %></p> 
         <% }  else { %>
-        <p class="card-text" id="type">Looking to buy</p> 
+        <p class="card-text" id="type"><%= __('Looking to buy') %></p> 
         <% } %></p>
       <p class="card-text"><%= description %></p>
-      <p class="card-text">Price: <%= price %>€</p>
+      <p class="card-text"><%= __('Price:') %>: <%= price %>€</p>
       <p class="card-text">Tags: <%= tags %></p>
-      <a href="/" class="btn btn-light">Go back</a>
+      <a href="/" class="btn btn-light"><%= __('Go back') %></a>
     </div>
   </div>
   

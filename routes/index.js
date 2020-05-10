@@ -1,7 +1,19 @@
 const express = require('express');
+const i18n = require('i18n');
+const path = require('path');
 
 const router = express.Router();
 const Ad = require('../models/Ad');
+
+i18n.configure({
+  locales: ['en', 'es'],
+  directory: path.join(__dirname, '..', 'locales'),
+  defaultLocale: 'en',
+  autoReload: true,
+  syncFiles: true,
+  cookie: 'locale',
+});
+router.use(i18n.init);
 
 /* GET home page. */
 router.get('/', async (req, res) => {
