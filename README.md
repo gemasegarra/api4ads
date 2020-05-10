@@ -31,16 +31,14 @@ password: 1234
 
 /apiv1/authenticate with POST method will create a token if credentials are valid or return a ```401 Unauthorized``` error if user or password are not valid. This token will be used as a query string to access the API data via /apiv1/ads?token=token.
 
-
-
-| Endpoint        |    Response        |   Method
-| ------------- |:-------------:| |------:|
-| /apiv1/authenticate | token to access apiv1/ads if email and password are correct | POST |
-| /apiv1/ads | without a valid token, ```401 Unauthorized``` error  | GET |
-| /apiv1/ads?token=validtoken      | json data with all ads | GET |
-| /apiv1/ads/{ad.id}      |  json data of an ad by id    | GET |
-| /apiv1/tags |  json data with the allowed tags and the tags in use | GET |
-
+| Method | Endpoint                    | Response                                             |
+|--------|-----------------------------|------------------------------------------------------|
+| POST   | /apiv1/authenticate         | token to access apiv1/ads if credentials are correct |
+| GET    | /apiv1/ads                  | without a valid token, ```401 Unauthorized``` error  |
+| GET    | /apiv1/ads?token=validtoken | json data with all ads                               |
+| POST   | /apiv1/ads                  | creates a new ad                                     |
+| GET    | /apiv1/ads/{ad.id}          | json data of an ad by id                             |
+| GET    | /apiv1/tags                 | json data with the allowed tags and the tags in use  |
 
 The API allows to create a new ad using the ```/apiv1/ads``` endpoint with a POST method. 
 
