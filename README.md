@@ -29,7 +29,7 @@ email: user@example.com
 password: 1234
 ````
 
-![user token](https://github.com/gemasegarra/api4ads/blob/master/public/images/06.png)
+![user token](https://github.com/gemasegarra/api4ads/blob/master/public/images/6.png)
 
 /apiv1/authenticate with POST method will create a token if credentials are valid or return a ```401 Unauthorized``` error if user or password are not valid. This token will be used as a query string to access the API data via /apiv1/ads?token=token.
 
@@ -47,7 +47,7 @@ The API allows to create a new ad using the ```/apiv1/ads``` endpoint with a POS
 **New feature!**
 Pictures can now be uploaded as a file from your machine and will be saved on public/uploads folder. If ```ads-thumbnails-worker``` is running a thumbnail of the picture with size 100x100 will be created and saved too.
 
-![picture upload](https://github.com/gemasegarra/api4ads/blob/master/public/images/07.png)
+![picture upload](https://github.com/gemasegarra/api4ads/blob/master/public/images/7.png)
 
 All ads will have the following schema:
 ````
@@ -123,7 +123,7 @@ Several filters can be used at once:
 You can see all the created ads and filter them on http://localhost:3000, rendered with EJS and CoreUI. 
 
 **New feature!** 
-![english to spanish](https://github.com/gemasegarra/api4ads/blob/master/public/images/08.png)
+![english to spanish](https://github.com/gemasegarra/api4ads/blob/master/public/images/8.png)
 Now it's possible to change the website language between English and Spanish.
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/5.png)
