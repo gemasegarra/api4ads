@@ -1,4 +1,7 @@
 const express = require('express');
+const formidable = require('express-formidable');
+const path = require('path');
+const cote = require('cote');
 
 const router = express.Router();
 
@@ -72,9 +75,26 @@ router.get('/:id', async (req, res, next) => {
 // POST /apiv1/ads
 // Creates new ad
 
-router.post('/', async (req, res, next) => {
+const adPhotoPublisher = new cote.Publisher({ name: 'adPhotoPublisher' });
+
+router.post('/', formidable({
+  uploadDir: process.env.UPLOAD_DIR,
+  keepExtensions: true,
+}), async (req, res, next) => {
   try {
-    const adData = req.body;
+    const { photo } = req.files;
+    if (!photo) {
+      const err = new Error('missing file "photo"');
+      err.status = 400;
+      throw err;
+    }
+
+    await adPhotoPublisher.publish('adPhoto', {
+      path: photo.path,
+    });
+
+    const adData = req.fields;
+    adData.photo = photo.path;
     const ad = new Ad(adData);
     const savedAd = await ad.save();
     res.status(201).json({ status: 'ad created', result: savedAd });

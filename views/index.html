@@ -15,21 +15,30 @@
   </p>
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
-      <div class="info"><%= __('To filter ads by name:') %> http://localhost:3000/<p class='example'>?name=<%= __('name') %></p>. <%= __('i.e.') %>
+      <div class="info"><%= __('To filter ads by name:') %> http://localhost:3000/<p class='example'>
+          ?name=<%= __('name') %></p>. <%= __('i.e.') %>
         http://localhost:3000/<p class='example'>?name=beach</p>
       </div>
 
-      <div class="info"><%= __('To filter ads by price:') %> http://localhost:3000/<p class='example'>?price=<%= __('number') %></p>. <%= __('i.e.') %>
-        http://localhost:3000/<p class='example'>?price=20</p>. <%= __('You can also filter ads by min and max price:') %> <p class='example'>?price=-20</p> <%= __('will return all ads with a price of 20 or lesser,') %> <p
-          class='example'>?price=20-</p> <%= __('will return all ads with a price of 20 or greater and ') %> <p class='example'>?price=20-30</p><%= __('all ads with a price between 20-30') %>
+      <div class="info"><%= __('To filter ads by price:') %> http://localhost:3000/<p class='example'>
+          ?price=<%= __('number') %></p>. <%= __('i.e.') %>
+        http://localhost:3000/<p class='example'>?price=20</p>.
+        <%= __('You can also filter ads by min and max price:') %> <p class='example'>?price=-20</p>
+        <%= __('will return all ads with a price of 20 or lesser,') %> <p class='example'>?price=20-</p>
+        <%= __('will return all ads with a price of 20 or greater and ') %> <p class='example'>?price=20-30</p>
+        <%= __('all ads with a price between 20-30') %>
       </div>
-      <div class="info"><%= __('To filter ads by tags:') %> http://localhost:3000/<p class='example'>?tags=tag</p> (lifestyle,
-        mobile, motor, work)  <%= __('i.e.') %> http://localhost:3000/<p class='example'>?tags=lifestyle</p>
+      <div class="info"><%= __('To filter ads by tags:') %> http://localhost:3000/<p class='example'>?tags=tag</p>
+        (lifestyle,
+        mobile, motor, work) <%= __('i.e.') %> http://localhost:3000/<p class='example'>?tags=lifestyle</p>
       </div>
-      <div class="info"><%= __('To filter ads by type:') %> http://localhost:3000/<p class='example'>?onSale=true</p> <%= __('if looking for items on sale and') %> http://localhost:3000/<p class='example'>?onSale=false</p> <%= __('for requested items') %></div>
+      <div class="info"><%= __('To filter ads by type:') %> http://localhost:3000/<p class='example'>?onSale=true</p>
+        <%= __('if looking for items on sale and') %> http://localhost:3000/<p class='example'>?onSale=false</p>
+        <%= __('for requested items') %></div>
     </div>
   </div>
-  <button type="button" id="lang-but" class="btn btn-outline-secondary" onclick="changeLanguage()"> <%= __('Mostrar en español') %> </button>
+  <button type="button" id="lang-but" class="btn btn-outline-secondary" onclick="changeLanguage()">
+    <%= __('Mostrar en español') %> </button>
 
 
   <div class="row">
@@ -54,15 +63,14 @@
       if (document.cookie === "locale=es") {
         let langChange = "locale=en"
         document.cookie = langChange
-      }
-      else if (document.cookie === "locale=en") {
+      } else if (document.cookie === "locale=en") {
         let langChange = "locale=es"
         document.cookie = langChange
       }
-    
+
       window.location.reload()
     }
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"
     integrity="sha384-L2pyEeut/H3mtgCBaUNw7KWzp5n9&#43;4pDQiExs933/5QfaTh8YStYFFkOzSoXjlTb" crossorigin="anonymous">
   </script>

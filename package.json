@@ -4,17 +4,21 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./bin/www",
-    "dev": "cross-env DEBUG=api4ads:* NODE_ENV=development JWT_SECRET=jwtsecret nodemon ./bin/www",
+    "dev": "cross-env DEBUG=api4ads:* NODE_ENV=development JWT_SECRET=jwtsecret UPLOAD_DIR=./public/uploads nodemon ./bin/www",
+    "ads-thumbnails-worker": "node ./workers/ads_thumbnails.js",
     "install-db": "node database/install-db.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cote": "^1.0.0",
     "cross-env": "^7.0.2",
     "debug": "~2.6.9",
     "ejs": "^3.0.2",
     "express": "~4.16.1",
+    "express-formidable": "^1.2.0",
     "http-errors": "~1.6.3",
     "i18n": "^0.9.1",
+    "jimp": "^0.10.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.7",
     "morgan": "~1.9.1"
