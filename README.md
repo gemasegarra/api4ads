@@ -123,7 +123,9 @@ Several filters can be used at once:
 You can see all the created ads and filter them on http://localhost:3000, rendered with EJS and CoreUI. 
 
 **New feature!** 
+
 ![english to spanish](https://github.com/gemasegarra/api4ads/blob/master/public/images/8.gif)
+
 Now it's possible to change the website language between English and Spanish.
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/5.png)
