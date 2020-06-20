@@ -6,6 +6,9 @@
 
 API4ads is an API for advertising items. Users can create new ads, search, filter and sort the existing ones. 
 
+## Live version 🚀🚀
+API4ads v1. deployed version [here!](http://ec2-18-191-25-114.us-east-2.compute.amazonaws.com/) || Live version of Wall-Ads (frontend app made with React ⚛️ , link to repo [here](https://github.com/gemasegarra/wallAds)) [here!](http://18.191.25.114/) 
+
 ## Getting started 
 
 To run this project locally do the following:
