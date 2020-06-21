@@ -7,7 +7,7 @@
 API4ads is an API for advertising items. Users can create new ads, search, filter and sort the existing ones. 
 
 ## Live version 🚀🚀
-API4ads v1. deployed version [here!](http://ec2-18-191-25-114.us-east-2.compute.amazonaws.com/) || Live version of Wall-Ads (frontend app made with React ⚛️ , link to repo [here](https://github.com/gemasegarra/wallAds)) [here!](http://18.191.25.114/) 
+**API4ads** v1 website deployed version [here!](http://ec2-18-191-25-114.us-east-2.compute.amazonaws.com/) || Live version of **Wall-Ads** (frontend app made with React ⚛️ , link to repo [here](https://github.com/gemasegarra/wallAds)) [here!](http://18.191.25.114/) 
 
 ## Getting started 
 
@@ -23,9 +23,10 @@ To run this project locally do the following:
 
 ## API documentation  📖
 
-**New feature:**
+**New feature:** 
 Authentication via JTW has been implemented to the API. To access apiv1/ads you will need a JWT. 
 An user has been created for testing. 
+(Api4ads v2)
 
 ````
 email: user@example.com
@@ -49,6 +50,7 @@ The API allows to create a new ad using the ```/apiv1/ads``` endpoint with a POS
 
 **New feature!**
 Pictures can now be uploaded as a file from your machine and will be saved on public/uploads folder. If ```ads-thumbnails-worker``` is running a thumbnail of the picture with size 100x100 will be created and saved too.
+(Api4ads v2)
 
 ![picture upload](https://github.com/gemasegarra/api4ads/blob/master/public/images/7.png)
 
@@ -130,6 +132,7 @@ You can see all the created ads and filter them on http://localhost:3000, render
 ![english to spanish](https://github.com/gemasegarra/api4ads/blob/master/public/images/8.gif)
 
 Now it's possible to change the website language between English and Spanish.
+(Api4ads v2)
 
 ![website image](https://github.com/gemasegarra/api4ads/blob/master/public/images/5.png)
 
