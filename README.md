@@ -1,4 +1,4 @@
-# API4ads
+# API4ads 
 
 > REST API that allows to create ads, list and filter them! 
 
@@ -144,6 +144,7 @@ Creating a new ad through the website is not implemented yet.
 
 - NodeJS & Express
 - MongoDB & Mongoose
+- Deployed with AWS
 
 ## Author 👩🏻‍💻
 
